@@ -1,0 +1,11 @@
+ ---------------- Install qilish kerak start ----------------- 
+1.npm i react-router-dom
+2.npm i react-hot-toast
+3.npm i axios
+4.npm install antd --save
+5.npm install @ant-design/icons@5.x --save
+6.npm install tailwindcss @tailwindcss/vite
+7.npm i -g json-server
+8.npm i react-cookie
+9.npm i antd-img-crop
+ ---------------- Install qilish kerak end ----------------- 
