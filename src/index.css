@@ -5,8 +5,9 @@
 }
 body{
     background-color: #e0e0e0;
+    overflow-y: hidden;
 }
-.ant-btn-primary, .ant-menu-item-selected{
+.ant-btn-primary, .ant-menu-item-selected, .ant-switch.ant-switch-checked {
     background-color: var(--clr-gold) !important;
 }
 .ant-input-affix-wrapper-focused, .ant-input-outlined:hover{

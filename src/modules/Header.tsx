@@ -21,7 +21,7 @@ const Header = () => {
   }
   return (
     <>
-    <div className="bg-[#031529] p-2 py-[12px] border-b-[0.5px] border-slate-600 flex items-center justify-between">
+    <div className="bg-[#031529] sticky top-0 z-50 p-2 py-[12px] border-b-[0.5px] border-slate-600 flex items-center justify-between">
       <button onClick={() => setShowNavbar(!showNavbar)} className="text-white cursor-pointer">
         {showNavbar ?  <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </button>

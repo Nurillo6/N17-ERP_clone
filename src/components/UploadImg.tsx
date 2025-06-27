@@ -1,17 +1,18 @@
-import { useState, type Dispatch, type FC, type SetStateAction } from 'react';
+import { useEffect, useState, type Dispatch, type FC, type SetStateAction } from 'react';
 import { Upload } from 'antd';
 import type { GetProp, UploadFile, UploadProps } from 'antd';
 import ImgCrop from 'antd-img-crop';
 import { API } from '../hooks/getEnv';
+import type { UpdateImgType } from '../types/UploadType';
 
 type FileType = Parameters<GetProp<UploadProps, 'beforeUpload'>>[0];
 
-const UploadImg:FC<{setImage:Dispatch<SetStateAction<any>>}> = ({setImage}) => {
-  const [fileList, setFileList] = useState<UploadFile[]>([]);
+const UploadImg: FC<{ setImage: Dispatch<SetStateAction<any>>, updateData?: UpdateImgType }> = ({ setImage, updateData }) => {
+  const [fileList, setFileList] = useState<UploadFile[] | UpdateImgType[]>(updateData ? [updateData] : []);
 
   const onChange: UploadProps['onChange'] = ({ fileList: newFileList }) => {
     setFileList(newFileList);
-    setImage(newFileList[0].response)
+    setImage(newFileList[0]?.response)
   };
 
   const onPreview = async (file: UploadFile) => {
@@ -29,6 +30,11 @@ const UploadImg:FC<{setImage:Dispatch<SetStateAction<any>>}> = ({setImage}) => {
     imgWindow?.document.write(image.outerHTML);
   };
 
+  useEffect(() => {
+    if (updateData) {
+      setFileList([updateData])
+    }
+  }, [updateData])
   return (
     <ImgCrop rotationSlider>
       <Upload
