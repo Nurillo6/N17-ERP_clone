@@ -24,3 +24,7 @@ body{
 .ant-pagination-item-active > a, .ant-spin-dot{
     color:var(--clr-gold) !important;
 }
+
+.ant-select-disabled .ant-select-selection-item{
+    color: black !important;
+}

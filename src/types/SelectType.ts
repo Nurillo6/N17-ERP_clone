@@ -5,5 +5,6 @@ export interface SelectType{
     extraClass?:string,
     placeholder:string,
     value:any,
-    setValue:Dispatch<SetStateAction<any>>
+    setValue:Dispatch<SetStateAction<any>>,
+    disabled?:boolean
 }
